@@ -8,7 +8,7 @@ export const projects = [
     title: "Arogya – Telemedicine Platform",
     description:
       "A full-stack healthcare platform with secure appointments, doctor profiles, and real-time patient management.",
-    tech: ["Node.js", "Express", "MongoDB", "React"],
+    tech: ["Node.js", "Express", "PostgreSQL","Drizzle ORM","Redis","BullMQ", "React"],
     liveUrl: "https://arogya-client.vercel.app/",
     githubUrl: "https://github.com/dinesh0126/aarogya-first-api",
     image: arogyaImg
@@ -47,14 +47,14 @@ export const featuredProjects = [
     title: "MERN Food Ordering App",
     description:
       "Multi-vendor ordering with live menus, cart sync, and secure payments.",
-    tech: ["MongoDB", "Express", "React", "Node.js"],
+    tech: ["MongoDB", "Express", "React", "Node.js","Razorpay payment gateway"],
     githubUrl: "https://github.com/dinesh0126/Restro"
   },
   {
     title: "Nike Website UI",
     description:
       "A bold, modern product showcase with smooth transitions and premium layout details.",
-    tech: ["React", "Tailwind", "UI/UX"]
+    tech: ["React", "Tailwind", "UI/UX","GSAP"]
   },
   {
     title: "Meshop – E-commerce Platform",
@@ -66,13 +66,13 @@ export const featuredProjects = [
     title: "F1 Website Redesign",
     description:
       "A sleek motorsport experience featuring motion-driven storytelling and high-performance UI.",
-    tech: ["React", "Framer Motion", "UI/UX"]
+    tech: ["React", "Framer Motion", "UI/UX" ,"Swiperjs"]
   }
 ];
 
 export const skills = {
   frontend: ["React.js", "Redux", "Tailwind CSS", "Framer Motion"],
-  backend: ["Node.js", "Express.js", "REST APIs"],
+  backend: ["Node.js", "Express.js", "REST APIs","JWT Auth","Redis"],
   database: ["MongoDB", "PostgreSQL", "Firebase"],
   tools: ["Git", "Vercel", "Postman", "Figma"]
 };

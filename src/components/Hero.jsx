@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-sm uppercase tracking-[0.4em] text-white/60"
         >
-          Developer Portfolio
+          Building scalable and modern web applications
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
