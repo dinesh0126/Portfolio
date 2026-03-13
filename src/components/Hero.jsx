@@ -5,7 +5,7 @@ const floatingItems = ["bg-glow-blue", "bg-glow-pink", "bg-glow-mint"];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-28">
+    <section id="home" className="relative overflow-hidden pt-16">
       <div className="animated-gradient absolute inset-0 bg-hero-gradient opacity-80" />
       <div className="absolute inset-0">
         {floatingItems.map((color, index) => (
