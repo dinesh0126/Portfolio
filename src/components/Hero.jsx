@@ -1,4 +1,5 @@
 ﻿import { motion } from "framer-motion";
+import cvFile from "../images/cv_dinesh.pdf";
 
 const floatingItems = ["bg-glow-blue", "bg-glow-pink", "bg-glow-mint"];
 
@@ -50,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.8 }}
-          className="mt-10 flex flex-wrap gap-4"
+          className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-4"
         >
           <a href="#projects" className="btn-primary">
             View Projects
@@ -58,8 +59,13 @@ export default function Hero() {
           <a href="#contact" className="btn-secondary">
             Contact Me
           </a>
+          <a href={cvFile} download className="btn-secondary">
+            Download CV
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
+
+

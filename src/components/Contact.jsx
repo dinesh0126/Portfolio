@@ -68,8 +68,8 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section-spacing">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_1.1fr]">
-        <div className="space-y-6">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:gap-10 md:grid-cols-[1fr_1.1fr]">
+        <div className="space-y-4 md:space-y-6">
           <p className="text-sm uppercase tracking-[0.3em] text-white/60">
             Contact
           </p>
@@ -169,3 +169,6 @@ export default function Contact() {
     </section>
   );
 }
+
+
+
