@@ -1,0 +1,79 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body bg-ink-900 text-white antialiased;
+}
+
+.glass {
+  @apply bg-frost border border-white/10 shadow-glass backdrop-blur-xl;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #6ae4ff 0%, #ff6aa2 50%, #63f5d6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-spacing {
+  @apply py-20 md:py-28;
+}
+
+.nav-link {
+  @apply text-sm uppercase tracking-[0.2em] text-white/70 hover:text-white transition;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-white text-ink-900 px-6 py-3 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5 hover:shadow-glass;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-white/30 text-white px-6 py-3 text-sm font-semibold transition hover:border-white hover:text-white;
+}
+
+.card-hover {
+  @apply transition duration-300 hover:-translate-y-1 hover:shadow-glass;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient 12s ease infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
