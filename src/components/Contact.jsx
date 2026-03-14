@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+﻿import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const whatsappNumber = "+917015190602";
@@ -15,6 +15,7 @@ const socials = [
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const [toast, setToast] = useState({ message: "", type: "success" });
+  const formRef = useRef(null);
 
   const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
 
@@ -49,17 +50,16 @@ export default function Contact() {
         },
         body: JSON.stringify(payload)
       });
-
       if (response.ok || response.type === "opaque") {
-        event.currentTarget.reset();
+        formRef.current?.reset();
         showToast("Thank you! Your message has been sent.", "success");
       } else {
-        showToast("Thank you! Your message has been sent.", "success");
-        event.currentTarget.reset();
+        showToast("Something went wrong. Please try again.", "error");
+        formRef.current?.reset();
       }
     } catch (error) {
       // Formspree can still accept the submission even if the browser blocks the response.
-      event.currentTarget.reset();
+      formRef.current?.reset();
       showToast("Thank you! Your message has been sent.", "success");
     } finally {
       setIsSending(false);
@@ -74,10 +74,10 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="font-display text-3xl font-semibold md:text-4xl">
-            Let’s build something exceptional together.
+            Let's build something exceptional together.
           </h2>
           <p className="text-white/70">
-            Ready to launch your next product? Share the vision and I’ll help
+            Ready to launch your next product? Share the vision and I�ll help
             turn it into a polished, production-ready experience.
           </p>
           <div className="glass rounded-3xl p-5 text-sm text-white/70">
@@ -104,6 +104,7 @@ export default function Contact() {
         </div>
 
         <motion.form
+          ref={formRef}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -111,6 +112,18 @@ export default function Contact() {
           className="glass rounded-3xl p-6"
           onSubmit={handleSubmit}
         >
+          {toast.message ? (
+            <div
+              role="status"
+              className={`mb-4 rounded-2xl border px-4 py-3 text-sm ${
+                toast.type === "error"
+                  ? "border-red-400/40 bg-red-500/10 text-red-100"
+                  : "border-emerald-400/40 bg-emerald-500/10 text-emerald-100"
+              }`}
+            >
+              {toast.message}
+            </div>
+          ) : null}
           <div className="grid gap-4">
             <div>
               <label className="text-xs uppercase tracking-[0.2em] text-white/60">
@@ -155,20 +168,16 @@ export default function Contact() {
         </motion.form>
       </div>
 
-      {toast.message ? (
-        <div className="fixed right-6 top-6 z-50">
-          <div
-            className={`glass rounded-2xl px-4 py-3 text-sm shadow-soft ${
-              toast.type === "error" ? "border border-red-400/40 text-red-200" : "border border-emerald-400/40 text-emerald-200"
-            }`}
-          >
-            {toast.message}
-          </div>
-        </div>
-      ) : null}
+    
     </section>
   );
 }
+
+
+
+
+
+
 
 
 
