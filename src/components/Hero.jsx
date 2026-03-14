@@ -1,5 +1,5 @@
 ﻿import { motion } from "framer-motion";
-import cvFile from "../images/cv_dinesh.pdf";
+import cvFile from "../images/Dinesh_Resume.pdf";
 
 const floatingItems = ["bg-glow-blue", "bg-glow-pink", "bg-glow-mint"];
 
