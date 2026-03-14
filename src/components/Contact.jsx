@@ -15,11 +15,18 @@ const socials = [
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const [toast, setToast] = useState({ message: "", type: "success" });
+  const [formValues, setFormValues] = useState({ name: "", email: "", message: "" });
   const formRef = useRef(null);
 
   const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues((prev) => ({ ...prev, [name]: value }));
+  };
+
   const showToast = (message, type = "success") => {
+
     setToast({ message, type });
     window.clearTimeout(showToast.timeoutId);
     showToast.timeoutId = window.setTimeout(() => {
@@ -53,6 +60,7 @@ export default function Contact() {
       if (response.ok || response.type === "opaque") {
         formRef.current?.reset();
         showToast("Thank you! Your message has been sent.", "success");
+        setFormValues({ name: "", email: "", message: "" });
       } else {
         showToast("Something went wrong. Please try again.", "error");
         formRef.current?.reset();
@@ -130,6 +138,8 @@ export default function Contact() {
                 Name
               </label>
               <input
+                value={formValues.name}
+                onChange={handleChange}
                 type="text"
                 name="name"
                 required
@@ -142,6 +152,8 @@ export default function Contact() {
                 Email
               </label>
               <input
+                value={formValues.email}
+                onChange={handleChange}
                 type="email"
                 name="email"
                 required
@@ -154,6 +166,8 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                value={formValues.message}
+                onChange={handleChange}
                 rows="4"
                 name="message"
                 required
@@ -172,6 +186,9 @@ export default function Contact() {
     </section>
   );
 }
+
+
+
 
 
 
