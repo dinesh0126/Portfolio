@@ -95,6 +95,17 @@ export default function Contact() {
             <p className="mt-2">
               Email: <a href={`mailto:${emailAddress}`} className="text-white">{emailAddress}</a>
             </p>
+            <p className="mt-2">
+              Address:{" "}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Hisar%2C%20Haryana"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white"
+              >
+                Hisar, Haryana
+              </a>
+            </p>
           </div>
           <div className="flex flex-col gap-3">
             {socials.map((social) => (
@@ -186,6 +197,7 @@ export default function Contact() {
     </section>
   );
 }
+
 
 
 
