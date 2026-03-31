@@ -85,7 +85,7 @@ export default function Contact() {
             Let's build something exceptional together.
           </h2>
           <p className="text-white/70">
-            Ready to launch your next product? Share the vision and I�ll help
+            Ready to launch your next product? Share the vision and I will help
             turn it into a polished, production-ready experience.
           </p>
           <div className="glass rounded-3xl p-5 text-sm text-white/70">

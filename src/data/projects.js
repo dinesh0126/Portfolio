@@ -8,7 +8,7 @@ export const projects = [
     title: "Arogya – Telemedicine Platform",
     description:
       "A full-stack healthcare platform with secure appointments, doctor profiles, and real-time patient management.",
-    tech: ["Node.js", "Express", "PostgreSQL","Drizzle ORM","Redis","BullMQ", "React"],
+    tech: ["Node.js", "Express", "PostgreSQL","Drizzle ORM","Redis","Docker","BullMQ", "React"],
     liveUrl: "https://arogya-client.vercel.app/",
     githubUrl: "https://github.com/dinesh0126/aarogya-first-api",
     image: arogyaImg
@@ -72,7 +72,7 @@ export const featuredProjects = [
 
 export const skills = {
   frontend: ["React.js", "Redux", "Tailwind CSS", "Framer Motion"],
-  backend: ["Node.js", "Express.js", "REST APIs","JWT Auth","Redis"],
+  backend: ["Node.js", "Express.js", "REST APIs","JWT Auth","Redis","Docker"],
   database: ["MongoDB", "PostgreSQL", "Firebase"],
   tools: ["Git", "Vercel", "Postman", "Figma"]
 };

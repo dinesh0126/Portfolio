@@ -5,13 +5,14 @@ const floatingItems = ["bg-glow-blue", "bg-glow-pink", "bg-glow-mint"];
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-16">
-      <div className="animated-gradient absolute inset-0 bg-hero-gradient opacity-80" />
+    <section id="home" className="relative overflow-hidden pt-16 text-white">
+      <div className="animated-gradient absolute inset-0 bg-hero-gradient opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-transparent" />
       <div className="absolute inset-0">
         {floatingItems.map((color, index) => (
           <motion.div
             key={color}
-            className={`floating absolute h-40 w-40 rounded-full blur-3xl ${color} opacity-30`}
+            className={`floating absolute h-40 w-40 rounded-full blur-3xl ${color} opacity-25`}
             style={{
               top: `${20 + index * 18}%`,
               left: `${10 + index * 25}%`
@@ -27,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-sm uppercase tracking-[0.4em] text-white/60"
+          className="text-sm uppercase tracking-[0.4em] text-white/55"
         >
           Building scalable and modern web applications
         </motion.p>
@@ -35,7 +36,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.9 }}
-          className="mt-6 font-display text-4xl font-semibold leading-tight md:text-6xl"
+          className="mt-6 font-display text-4xl font-semibold leading-tight text-white md:text-6xl"
         >
           Dinesh Sharma – <span className="gradient-text">Full Stack Developer</span>
         </motion.h1>
@@ -43,7 +44,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-6 max-w-2xl text-lg text-white/70"
+          className="mt-6 max-w-2xl text-lg text-white/75"
         >
           Specializing in MERN Stack, React, Node.js, and Modern Web Applications.
         </motion.p>
